@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +21,23 @@
         <p>Spiel mit Freunden</p>
     </div>
     <div>
-        
+        <button onclick="show_instructions()">
+            <h2>Spielanleitung ansehen</h2>
+        </button>
+        <div id="instructions" style="display:none;">
+            <p>lorem ipsum</p>
+        <button onclick="hide_instructions()">
+            Ausblenden
+        </button>
+        </div>
     </div>
+<script>
+    function show_instructions(){
+        document.getElementById("instructions").style="display:block;"
+    }
+    function hide_instructions(){
+        document.getElementById("instructions").style="display:none;"
+    }
+</script>
 </body>
 </html>
