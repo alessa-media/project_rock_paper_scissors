@@ -5,8 +5,8 @@
 let Anzahl_Runden
 let Spieler1_Punkte
 let Spieler2_Punkte
-let Spieler1
-let Spieler2
+let Auswahl_Spieler1 
+let Auswahl_Spieler2 
 let winner
 
 
@@ -21,14 +21,15 @@ document.getElementById("player2").innerText=Spielername2+" wählt...";
 
 //Beide Spielblöcke werden angezeigt, sobald auf "Spiel starten" geklickt wird.
 function start_game(){
-    document.getElementById("game").style="display:block;"
+    document.getElementById("game").style="display:block;";
 }
 
 
 function game(Auswahl){
-    Spieler1 = Auswahl;
-    if(Spieler1 === 'Schere' ){
-        document.getElementById("buttons_spieler1").style="display:hidden;"
+    Auswahl_Spieler1 = Auswahl;
+    if(Auswahl_Spieler1 === 'Schere' ){
+        document.getElementById("buttons_spieler1").style="display:none;";
+        document.getElementsByClassName("Nach_Auswahl").style="display:block;";
     }
     
     
