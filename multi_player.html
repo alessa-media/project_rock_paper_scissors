@@ -14,9 +14,9 @@
         <div>
             <p id="player1">Spieler 1 wählt...</p>
             <div id="buttons_spieler1" style="display: block;">
-                <button onclick="game('Schere')" id="scissors1">Schere</button>
-                <button onclick="Spieler1 = 'Stein' " id="stone1">Stein</button>
-                <button onclick="Spieler1 = 'Papier' "id="paper1">Papier</button>
+                <button onclick="selected1('Schere')" id="scissors1">Schere</button>
+                <button onclick="selected1('Stein') " id="stone1">Stein</button>
+                <button onclick="selected1('Papier') "id="paper1">Papier</button>
             </div>
             <div>
                 <button class="Nach_Auswahl" style="display: none;">Locked in</button>
@@ -25,14 +25,14 @@
         <div>
             <p id="player2">Spieler 2 wählt...</p>
             <div id="buttons_spieler2">
-                <button onclick="Spieler2 = 'Schere' "id="scissors2">Schere</button>
-                <button onclick="Spieler2 = 'Stein' " id="stone2">Stein</button>
-                <button onclick="Spieler2 = 'Papier' "id="paper2">Papier</button>
+                <button onclick="selected2('Schere') "id="scissors2">Schere</button>
+                <button onclick="selected2('Stein') " id="stone2">Stein</button>
+                <button onclick="selected2('Papier') "id="paper2">Papier</button>
             </div>
         </div>
     </div>
 
-    <button onclick="check_winner(Spieler1,Spieler2)">sieger anzeigen</button>
+    <button onclick="check_winner(Spielername1,Spielername2)">sieger anzeigen</button>
     <script src="game.js">
     </script>
 </body>
