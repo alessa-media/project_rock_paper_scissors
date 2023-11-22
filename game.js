@@ -16,3 +16,4 @@ function start_game(){
 //Platzhalter für Punktzahl.
 let point
 
+//hallo
