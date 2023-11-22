@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schere, Stein, Papier</title>
 </head>
 <body>
-    <h1>Willkommen zu Schere, Stein und Papier!</h1>
-    <div>
+<div class="main">
+    <h1 class="title">Willkommen zu Schere, Stein und Papier!</h1>
+    <div class="button__description">
         <a href="single_player.html">
-            <button>Play</button>
+            <button class="button__text">Play</button>
         </a>
         <p>Spiel mit Computer</p>
     </div>
-    <div>
+    <div class="button__description">
         <a href="multi_player.html">
-            <button>Play</button>
+            <button class="button__text">Play</button>
         </a>
         <p>Spiel mit Freunden</p>
     </div>
@@ -31,6 +33,7 @@
         </button>
         </div>
     </div>
+</div>
 <script> 
 //diese zwei Funktionen sind hier, um die Spielanleitung ein- und auszublenden
     function show_instructions(){
