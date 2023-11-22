@@ -1,0 +1,41 @@
+.main{
+    max-width: 1600px;
+    margin: auto;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    background-color: rgb(200,200,200);
+    text-align: center;
+}
+
+.title{
+    margin-bottom: 80px;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.button__text{
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    border-color: rgb(48,77,109);
+    border-radius: 10px;
+    background-color: rgb(48,77,109);
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.button__text:hover{
+    color: rgb(48, 77, 109);
+    border-color: rgb(48,77,109);
+    background-color: rgb(179,222,226);
+}
+
+.button__description{
+    padding-bottom: 50px;
+    
+}
+
+
+
+
