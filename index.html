@@ -22,12 +22,24 @@
             <button class="button__text">Play</button>
         </a>
     </div>
-    <div>
+    <div class="description">
         <button onclick="show_instructions()">
             <h2>Spielanleitung ansehen</h2>
         </button>
-        <div id="instructions" style="display:none;">
-            <p>lorem ipsum</p>
+        <div class="description__text" id="instructions" style="display:none;">
+            <p> 1. Ziel des Spiels:
+                    Das Ziel des Spiels ist es, die Handzeichen deines Gegners zu schlagen und zu gewinnen.</p>
+            <p>2. Die Handzeichen:
+                Schere: Forme eine Faust und strecke den Zeige- und Mittelfinger aus.
+                Stein: Forme eine Faust.
+                Papier: Strecke alle Finger aus.</p>
+            <p>3. Der Ablauf:
+                Beide Spieler wählen gleichzeitig eins der drei Handzeichen, indem sie ihre Hände in der entsprechenden Form zeigen.
+                Die Ergebnisse der möglichen Kombinationen sind:
+                Schere schneidet Papier (Schere gewinnt)
+                Papier bedeckt Stein (Papier gewinnt)
+                Stein zerquetscht Schere (Stein gewinnt)
+                Gleichstand, wenn beide Spieler dasselbe Handzeichen wählen.</p>
         <button onclick="hide_instructions()">
             Ausblenden
         </button>
