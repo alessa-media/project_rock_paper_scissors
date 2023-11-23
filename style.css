@@ -45,8 +45,13 @@
     background-color: rgb(179,222,226);
 }
 
+/* check this again */
+.description{
+    text-align: center; 
+}
+
 .description__button{
-    height: 80px;
+    height: 60px;
     color: rgb(48,77,109);
     border: 1px solid rgb(48,77,109);
     border-radius: 10px;
@@ -54,20 +59,29 @@
 }
 
 .description__button:hover{
-    height: 80px;
     color: white;
-    border: 1px solid rgb(179,222,226);
-    border-radius: 10px;
+    border: 1px solid rgb(48,77,109);
     background-color: rgb(48,77,109);
 }
 
+/* check this in connection with description-div */
 .description__text{
+    display: inline-block;
     text-align: left;
-    margin-left: 150px;
+    max-width: 500px;
+    margin-left: 300px;
 }
 
 .description__button--hide{
-    
+    height: 20px;
+    color: rgb(48,77,109);
+    border: 1px solid rgb(48,77,109);
+    border-radius: 10px;
+    background-color: rgb(179,222,226);
 }
 
-
+.description__button--hide:hover{
+    color: white;
+    border: 1px solid rgb(48,77,109);
+    background-color: rgb(48,77,109);
+}
