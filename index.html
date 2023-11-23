@@ -10,25 +10,27 @@
 <body>
 <div class="main">
     <h1 class="title">Willkommen zu Schere, Stein und Papier!</h1>
-    <div class="button__description">
-        <p>Spiel mit Computer:</p>
-        <a href="single_player.html">
-            <button class="button__text">Play</button>
-        </a>
-    </div>
-    <div class="button__description">
-        <p>Spiel mit Freunden:</p>
-        <a href="multi_player.html">
-            <button class="button__text">Play</button>
-        </a>
+    <div class="buttons">
+        <div class="button__description--text">
+            <p>Spiel mit Computer:</p>
+            <a href="single_player.html">
+                <button class="button__text">Play</button>
+            </a>
+        </div>
+        <div class="button__description--text">
+            <p>Spiel mit Freunden:</p>
+            <a href="multi_player.html">
+                <button class="button__text">Play</button>
+            </a>
+        </div>
     </div>
     <div class="description">
-        <button onclick="show_instructions()">
+        <button class="description__button" onclick="show_instructions()">
             <h2>Spielanleitung ansehen</h2>
         </button>
         <div class="description__text" id="instructions" style="display:none;">
-            <p> 1. Ziel des Spiels:
-                    Das Ziel des Spiels ist es, die Handzeichen deines Gegners zu schlagen und zu gewinnen.</p>
+            <p>1. Ziel des Spiels:
+                Das Ziel des Spiels ist es, die Handzeichen deines Gegners zu schlagen und zu gewinnen.</p>
             <p>2. Die Handzeichen:
                 Schere: Forme eine Faust und strecke den Zeige- und Mittelfinger aus.
                 Stein: Forme eine Faust.

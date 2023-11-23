@@ -1,5 +1,5 @@
 .main{
-    max-width: 1600px;
+    max-width: 2500px;
     margin: auto;
     padding-top: 100px;
     padding-bottom: 150px;
@@ -13,35 +13,61 @@
     font-size: 50px;
 }
 
+.buttons{
+    display: flex;
+    flex-basis: 30%;
+    flex-direction: row;
+    justify-content: center;
+}
+.button__description--text{
+    padding-bottom: 50px;
+    font-size: 20px;
+    font-style: bold;
+    margin: 30px;
+}
 .button__text{
+    width: 500px;
+    height: 100px;
     font-size: 40px;
     font-weight: bold;
     color: white;
     border-color: rgb(48,77,109);
     border-radius: 10px;
     background-color: rgb(48,77,109);
-    padding: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
+    margin: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .button__text:hover{
     color: rgb(48, 77, 109);
-    border-color: rgb(48,77,109);
+    border: 1px solid rgb(48,77,109);
     background-color: rgb(179,222,226);
 }
 
-.button__description{
-    padding-bottom: 50px;
-    font-size: 20px;
-    font-style: bold;
+.description__button{
+    height: 80px;
+    color: rgb(48,77,109);
+    border: 1px solid rgb(48,77,109);
+    border-radius: 10px;
+    background-color: rgb(179,222,226);
+}
+
+.description__button:hover{
+    height: 80px;
+    color: white;
+    border: 1px solid rgb(179,222,226);
+    border-radius: 10px;
+    background-color: rgb(48,77,109);
 }
 
 .description__text{
     text-align: left;
-    padding-left: 150px;
+    margin-left: 150px;
 }
 
-
+.description__button--hide{
+    
+}
 
 
