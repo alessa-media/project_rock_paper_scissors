@@ -8,8 +8,19 @@
 </head>
 <body>
     <button type="button" onclick="javascript:history.back()">Zurück</button><br>
-    <button onclick="start_game()">Spiel starten</button>
-    <h2>Punktzahl:</h2>
+    <button id="start_button" onclick="document.getElementById('rundenauswahl').style='display:block;' ; 
+    document.getElementById('start_button').style='display:none;'">Spiel starten</button>
+
+    <div id="rundenauswahl" style="display: none;">
+        <h2>Wie viele Runden möchtet Ihr Spielen?</h2>
+
+        <button onclick="start_game(3)">3</button>
+        <button onclick="start_game(5)">5</button>
+        <button onclick="start_game(10)">10</button>
+    </div>
+
+
+    <!--div "game" wird angezeigt während des spiels-->
     <div id="game" style="display:none;">
         <div>
             <p id="player1">Spieler 1 wählt...</p>
@@ -32,7 +43,16 @@
         </div>
     </div>
 
-    <button onclick="check_winner(Spielername1,Spielername2)">sieger anzeigen</button>
+    <!--div "spielauswertung" wird angezeigt wenn die Runde oder das Spiel beendes wurde-->
+    <div id="spielauswertung" style="display: none;">
+        
+        <h2 id="sieger"></h2>
+        <h3 id="punktzahl"></h3>
+
+        <button onclick="new_round">Nächste Runde</button>
+    </div>
+
+
     <script src="game.js">
     </script>
 </body>
