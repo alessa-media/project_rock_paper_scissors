@@ -1,9 +1,21 @@
 .main{
     max-width: 2500px;
     margin: auto;
-    background-color: rgb(215,215,215);
-    height: 100vh;
     text-align: center;
+    height: 100vh;
+}
+
+.main::before{
+    content: "";
+    background-image: url("background_pic.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.3;
+    z-index: -1;
 }
 
 .title{
@@ -47,6 +59,8 @@
 .description{
     text-align: center;
     background-color: rgb(150,150,150);
+    padding: 20px;
+    height: 50%;
 }
 
 .description__button{
