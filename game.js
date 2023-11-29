@@ -3,10 +3,10 @@
 
 //Platzhalter für Punktzahl.
 let Anzahl_Runden
-let Spieler1_Punkte
-let Spieler2_Punkte
-let Auswahl_Spieler1 
-let Auswahl_Spieler2 
+let Spieler1_Punkte = 0;
+let Spieler2_Punkte = 0;
+let Auswahl_Spieler1 = null;
+let Auswahl_Spieler2 = null;
 let winner
 let Spielername1 
 let Spielername2 
@@ -16,8 +16,15 @@ let Spielername2
 
 //Spiel wird gestartet
 //Beide Spielblöcke werden angezeigt, sobald auf "Spiel starten" geklickt wird.
-function start_game(){
+function start_game(runden){
+    //Rundenanzahl festlegen
+    Anzahl_Runden=runden
+
+    //Anzeigen und ausblenden der korrekten Elemente
+    document.getElementById("rundenauswahl").style="display:none;";
     document.getElementById("game").style="display:block;";
+
+
     //Pop-up-Fenster, um beiden Spielern einen Namen zu geben.
     Spielername1 = prompt("Gib Spieler 1 einen Namen.")
     Spielername2 = prompt("Gib Spieler 2 einen Namen.")
@@ -28,22 +35,48 @@ function start_game(){
 }
 
 
+//prüft ob Spieler1 Gewählt hat
+//speichert Auswahl von Spieler 1 in Variable
 function selected1(Auswahl){
     Auswahl_Spieler1 = Auswahl;
-    if(Auswahl_Spieler1 !== undefined ){
+    if(Auswahl_Spieler1 !== null ){
         document.getElementById("buttons_spieler1").style="display:none;";
         document.getElementById("player1").innerText=Spielername1+" hat gewählt!";
-    }  
+    } 
+
+    //sobald beide spieler gewählt haben wird die Runde ausgewertet
+    if(Auswahl_Spieler1 !== null && Auswahl_Spieler2 !== null){
+        check_winner(Auswahl_Spieler1, Auswahl_Spieler2);
+        display_result(winner);
+
+    }
+    
 }
 
+
+//prüft ob Spieler 2 Gewählt hat
+//speichert Auswahl von Spieler 2 in Variable
 function selected2(Auswahl){
     Auswahl_Spieler2 = Auswahl;
-    if(Auswahl_Spieler2 !== undefined ){
+    if(Auswahl_Spieler2 !== null ){
         document.getElementById("buttons_spieler2").style="display:none;";
         document.getElementById("player2").innerText=Spielername2+" hat gewählt!";
     }  
+
+    //falls dieser Spieler als zweites wählt wird das Spiel direkt ausgewertet
+    if(Auswahl_Spieler1 !== null && Auswahl_Spieler2 !== null){
+        check_winner(Auswahl_Spieler1, Auswahl_Spieler2);
+        display_result();
+    }
+    
 }
 
+
+
+
+//______________
+//wiederverwendete Funktionen
+//--------------------------
 
 
 //Funktion die üperprüft, welcher Spieler gewonnen hat. Dazu werden die Eingaben verglichen.
@@ -53,15 +86,69 @@ function selected2(Auswahl){
 function check_winner(eingabe1,eingabe2){
 
     if( eingabe1 === eingabe2){
-        alert("unentschieden");
-        return;
+        winner = null;
+        return winner;
     }else if((eingabe1 == "Stein" && eingabe2 == "Schere" )||(eingabe1 == "Schere" && eingabe2 == "Papier" )||(eingabe1 == "Papier" && eingabe2 == "Stein")){
         winner = Spielername1;
-        alert(winner);
-        return;    
+       // alert("Der Sieger ist " + winner);
+        return winner;    
     }else{
         winner = Spielername2;
-        alert(winner);
-        return;
+      //  alert("Der Sieger ist " +winner);
+        return winner;
     }
+}
+
+function display_result(){
+
+    //Punkte vergeben
+    if(winner == Spielername1){
+        Spieler1_Punkte += 1;
+    }else if (winner == Spielername2){
+        Spieler2_Punkte += 1;
+    }
+
+    //Zwischenstand anzeigen
+    document.getElementById("game").style="display:none";
+    document.getElementById("spielauswertung").style="display:block";
+    document.getElementById("sieger").innerText="Die Runde geht an: " + winner;
+    document.getElementById("punktzahl").innerText="Zwischendstand: " + Spielername1 + ": " + Spieler1_Punkte + " ,  " + Spielername2 + ": " + Spieler2_Punkte;
+
+    if(winner == null){
+        document.getElementById("sieger").innerText="Unentschieden, keine Punkte vergeben!"
+    }
+
+    Anzahl_Runden -= 1
+}
+
+
+function new_round(){
+    if(Anzahl_Runden >= 1){
+        document.getElementById("game").style="display:block;";
+        document.getElementById("spielauswertung").style="display:none";  
+
+        document.getElementById("player1").innerText=Spielername1+" wählt...";
+        document.getElementById("player2").innerText=Spielername2+" wählt...";
+
+        document.getElementById("buttons_spieler1").style="display:block;";
+        document.getElementById("buttons_spieler2").style="display:block;";
+
+        selected1(null);
+        selected2(null);     
+    }
+
+
+    if(Anzahl_Runden == 0){
+
+        document.getElementById("nächste_runde").style="display:none"
+        document.getElementById("spielauswertung").style="display:block";
+        document.getElementById("sieger").innerText= winner + " gewinnt das Spiel! Endstand: Spieler 1: " + Spieler1_Punkte + " Spieler 2: " + Spieler2_Punkte;
+        document.getElementById("punktzahl").style="display:none;";
+
+        if(Spieler1_Punkte == Spieler2_Punkte){
+            document.getElementById("sieger").innerText= "Das Endresultat ist Unentschieden!";
+        }
+    }
+
+
 }
