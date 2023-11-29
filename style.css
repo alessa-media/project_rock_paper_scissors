@@ -21,7 +21,11 @@
 .title{
     font-weight: bold;
     font-size: 50px;
-    padding-top: 50px;
+    padding: 30px;
+    background-color: rgb(48,77,109);
+    color: white;
+    display: inline-block;
+    border-radius: 10px;
 }
 
 .buttons{
@@ -29,13 +33,17 @@
     flex-basis: 30%;
     flex-direction: row;
     justify-content: center;
-    margin: 20px;t
+    margin: 20px;
 }
 
 .button__description--text{
     font-size: 20px;
     font-style: bold;
     margin: 30px;
+    padding: 10px;
+    background-color: rgb(111,167,190);
+    display: inline-block;
+    border-radius: 10px;
 }
 
 .button__text{
@@ -59,7 +67,7 @@
 .description{
     text-align: center;
     background-color: rgb(150,150,150);
-    padding: 20px;
+    padding: 40px;
     height: 50%;
 }
 
