@@ -35,6 +35,8 @@
     font-family: "Roboto";
   }
 
+/* frontpage-css: */
+
 .main{
     max-width: 2500px;
     margin: auto;
@@ -65,6 +67,7 @@
     border-radius: 10px;
 }
 
+/* check how and if flex-basis is needed */
 .buttons{
     display: flex;
     flex-basis: 30%;
@@ -100,7 +103,6 @@
     background-color: rgb(179,222,226);
 }
 
-/* check this again */
 .description{
     text-align: center;
     background-color: rgb(150,150,150);
@@ -122,7 +124,6 @@
     background-color: rgb(48,77,109);
 }
 
-/* check this in connection with description-div */
 .description__text{
     display: inline-block;
     text-align: left;
@@ -146,4 +147,38 @@
     color: white;
     border: 1px solid rgb(48,77,109);
     background-color: rgb(48,77,109);
+}
+
+/* multiplayer-css: */
+
+.rounds{
+    background-color: rgb(179,222,226);
+    color: rgb(48,77,109);
+    border-radius: 10px;
+}
+
+.rounds__buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.rounds__buttons--text{
+    font-size: large;
+    font-weight: bold;
+    color: rgb(48,77,109);
+    border: 1px solid rgb(48,77,109);
+    border-radius: 10px;
+    background-color: rgb(179,222,226);
+}
+
+.rounds__buttons--text:hover{
+    color: white;
+    border: 1px solid rgb(48,77,109);
+    background-color: rgb(48,77,109);
+}
+
+/* needs work */
+.background{
+    background-color: rgb(150,150,150);
 }
