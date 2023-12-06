@@ -12,6 +12,18 @@ let Spielername1
 let Spielername2 = "Computer"
 let Spielmodus
 
+/*
+let timeleft = 3;
+let auswertung = setInterval(function(){
+    if(timeleft <= 0){
+      clearInterval(auswertung);
+      document.getElementById("countdown").innerHTML = "Finished";
+    } else {
+      document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+    }
+    timeleft -= 1;
+  }, 1000);
+  */
 
 
 
@@ -38,7 +50,10 @@ function start_game(runden, modus){
 
     //damit der eingegebene Spielername auf der Seite angezeigt wird.
     document.getElementById("player1").innerText=Spielername1+" wählt...";
+
+    if(Spielmodus == "Multiplayer"){
     document.getElementById("player2").innerText=Spielername2+" wählt...";
+    }
 }
 
 
@@ -64,9 +79,11 @@ function selected1(Auswahl){
 
     //sobald beide spieler gewählt haben wird die Runde ausgewertet
     if(Auswahl_Spieler1 !== null && Auswahl_Spieler2 !== null){
-        check_winner(Auswahl_Spieler1, Auswahl_Spieler2);
-        display_result(winner);
 
+
+        check_winner(Auswahl_Spieler1, Auswahl_Spieler2);
+        timer();
+        display_result(winner);
     }
     
 }
@@ -84,6 +101,7 @@ function selected2(Auswahl){
     //falls dieser Spieler als zweites wählt wird das Spiel direkt ausgewertet
     if(Auswahl_Spieler1 !== null && Auswahl_Spieler2 !== null){
         check_winner(Auswahl_Spieler1, Auswahl_Spieler2);
+        timer();
         display_result();
     }
     
@@ -127,49 +145,48 @@ function display_result(){
     //Zwischenstand anzeigen
     document.getElementById("game").style="display:none";
     document.getElementById("spielauswertung").style="display:block";
+    document.getElementById("Spieler1_wahl").innerText= Spielername1 + " hat " + Auswahl_Spieler1 + " gewählt!"
+    document.getElementById("Spieler2_wahl").innerText= Spielername2 + " hat " + Auswahl_Spieler2 + " gewählt!"
     document.getElementById("sieger").innerText="Die Runde geht an: " + winner;
     document.getElementById("punktzahl").innerText="Zwischendstand: " + Spielername1 + ": " + Spieler1_Punkte + " ,  " + Spielername2 + ": " + Spieler2_Punkte;
 
+    //Für den Fall Unentschieden
     if(winner == null){
         document.getElementById("sieger").innerText="Unentschieden, keine Punkte vergeben!"
     }
 
+    //Anzahl Runden um 1 reduzieren
     Anzahl_Runden -= 1
 }
 
 
+
 function new_round(){
     if(Anzahl_Runden >= 1){
+        //Auswahl zurücksetzen
+        Auswahl_Spieler1 = null;
+        Auswahl_Spieler2 = null;
 
-
+        //Spielblock einblenden
+        document.getElementById("game").style="display:block;";
+        //Spielauswertung ausblenden
+        document.getElementById("spielauswertung").style="display:none";  
+        //Text anpassen für während der Auswahl für Spieler1
+        document.getElementById("player1").innerText=Spielername1+" wählt...";
+        //Buttons wieder einblenden für Spieler1
+        document.getElementById("buttons_spieler1").style="display:block;";
         
         if(Spielmodus == "Multiplayer"){
-            document.getElementById("game").style="display:block;";
-            document.getElementById("spielauswertung").style="display:none";  
-    
-            document.getElementById("player1").innerText=Spielername1+" wählt...";
+            //Text anpassen und Buttons einblenden für spieler 2 im Multiplayer
             document.getElementById("player2").innerText=Spielername2+" wählt...";
-    
-            document.getElementById("buttons_spieler1").style="display:block;";
             document.getElementById("buttons_spieler2").style="display:block;";
-
-            selected1(null);
-            selected2(null);  
-        }else{
-            Auswahl_Spieler1 = null;
-            Auswahl_Spieler2 = null;
-
-            document.getElementById("game").style="display:block;";
-            document.getElementById("spielauswertung").style="display:none";  
-    
-            document.getElementById("player1").innerText=Spielername1+" wählt...";
-    
-            document.getElementById("buttons_spieler1").style="display:block;";
         }
-        
+
     }
 
 
+
+    //Falls Alle Runden gespielt wurden wird das Spiel beendet und das Endresultat angezeigt
     if(Anzahl_Runden == 0){
 
         document.getElementById("nächste_runde").style="display:none"
@@ -183,4 +200,24 @@ function new_round(){
     }
 
 
+}
+
+
+function timer(){
+
+    document.getElementById("game").style="display:none;";
+    document.getElementById("spielauswertung").style="display:none;";
+    document.getElementById("live_countdown").style="display:block;";
+        let timeleft = 2;
+        let auswertung = setInterval(function(){
+            if(timeleft <= 0){
+            clearInterval(auswertung);
+            document.getElementById("live_countdown").style="display:none;";
+            document.getElementById("spielauswertung").style="display:block";
+            document.getElementById("live_countdown").innerText = 3;
+        } else {
+        document.getElementById("live_countdown").innerText = timeleft;
+        }
+        timeleft -= 1;
+        }, 1000);
 }
