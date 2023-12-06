@@ -143,8 +143,8 @@ function display_result(){
     }
 
     //Zwischenstand anzeigen
-    document.getElementById("game").style="display:none";
-    document.getElementById("spielauswertung").style="display:block";
+    //document.getElementById("game").style="display:none";
+    //document.getElementById("spielauswertung").style="display:block";
     document.getElementById("Spieler1_wahl").innerText= Spielername1 + " hat " + Auswahl_Spieler1 + " gewählt!"
     document.getElementById("Spieler2_wahl").innerText= Spielername2 + " hat " + Auswahl_Spieler2 + " gewählt!"
     document.getElementById("sieger").innerText="Die Runde geht an: " + winner;
