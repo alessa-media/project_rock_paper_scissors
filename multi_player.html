@@ -8,13 +8,11 @@
     <title>Multiplayer</title>
 </head>
 <body class="main">
+    <button class="backbutton" type="button" onclick="javascript:history.back()">Zurück</button><br>
     <div class="background">
-    <div class="background__square">
-        <button type="button" onclick="javascript:history.back()">Zurück</button><br>
-            <h1 class="title">Mehrspieler</h1><br>
+            <h1 class="title__multiplayer">Mehrspieler</h1><br>
         <button class="button__text" id="start_button" onclick="document.getElementById('rundenauswahl').style='display:block;' ; 
         document.getElementById('start_button').style='display:none;'">Spiel starten</button>
-    </div>
         <div id="rundenauswahl" style="display: none;">
             <h2 class="rounds">Wie viele Runden möchtet ihr spielen?</h2>
             <div class="rounds__buttons">
