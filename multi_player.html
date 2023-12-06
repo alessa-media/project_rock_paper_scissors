@@ -9,11 +9,12 @@
 </head>
 <body class="main">
     <div class="background">
+    <div class="background__square">
         <button type="button" onclick="javascript:history.back()">Zurück</button><br>
             <h1 class="title">Mehrspieler</h1><br>
         <button class="button__text" id="start_button" onclick="document.getElementById('rundenauswahl').style='display:block;' ; 
         document.getElementById('start_button').style='display:none;'">Spiel starten</button>
-
+    </div>
         <div id="rundenauswahl" style="display: none;">
             <h2 class="rounds">Wie viele Runden möchtet ihr spielen?</h2>
             <div class="rounds__buttons">
@@ -23,7 +24,7 @@
             </div>
         </div>
 
-        <!--div "game" wird angezeigt während des spiels-->
+        <!--div "game" wird angezeigt während des Spiels-->
         <div id="game" style="display:none;">
             <div class="selection">
                 <p id="player1">Spieler 1 wählt...</p>
@@ -46,7 +47,7 @@
             </div>
         </div>
 
-        <!--div "spielauswertung" wird angezeigt wenn die Runde oder das Spiel beendet wurde-->
+        <!--div "spielauswertung" wird angezeigt, wenn die Runde oder das Spiel beendet wurde-->
         <div id="spielauswertung" style="display: none;">
             
             <h2 id="sieger"></h2>
