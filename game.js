@@ -82,7 +82,7 @@ function selected1(Auswahl){
 
 
         check_winner(Auswahl_Spieler1, Auswahl_Spieler2);
-        timer();
+        countdown();
         display_result(winner);
     }
     
@@ -101,7 +101,7 @@ function selected2(Auswahl){
     //falls dieser Spieler als zweites wählt wird das Spiel direkt ausgewertet
     if(Auswahl_Spieler1 !== null && Auswahl_Spieler2 !== null){
         check_winner(Auswahl_Spieler1, Auswahl_Spieler2);
-        timer();
+        countdown();
         display_result();
     }
     
@@ -185,6 +185,11 @@ function new_round(){
     }
 
 
+    if(Anzahl_Runden == 1){
+        document.getElementById("nächste_runde").innerText="zur Auswertung";
+    }
+
+
 
     //Falls Alle Runden gespielt wurden wird das Spiel beendet und das Endresultat angezeigt
     if(Anzahl_Runden == 0){
@@ -193,7 +198,9 @@ function new_round(){
         document.getElementById("spielauswertung").style="display:block";
         document.getElementById("sieger").innerText= winner + " gewinnt das Spiel! Endstand: Spieler 1: " + Spieler1_Punkte + " Spieler 2: " + Spieler2_Punkte;
         document.getElementById("punktzahl").style="display:none;";
-
+        
+        document.getElementById("Spieler1_wahl").style="display:none;";
+        document.getElementById("Spieler2_wahl").style="display:none;";
         if(Spieler1_Punkte == Spieler2_Punkte){
             document.getElementById("sieger").innerText= "Das Endresultat ist Unentschieden!";
         }
@@ -203,12 +210,18 @@ function new_round(){
 }
 
 
-function timer(){
 
+//Funktion für den Countdown, erhöht die Spannung bei er Auswertung
+function countdown(){
+    //Anzeigen des Countdowns
     document.getElementById("game").style="display:none;";
     document.getElementById("spielauswertung").style="display:none;";
     document.getElementById("live_countdown").style="display:block;";
+
+        //Variable setzen um Countdownlänge zu bestimmen
         let timeleft = 2;
+        
+        //Intervall, so das immer nach 1000 milisekunden die Funktion function wiederholt wird
         let auswertung = setInterval(function(){
             if(timeleft <= 0){
             clearInterval(auswertung);
