@@ -49,7 +49,7 @@ function selected1(Auswahl){
         document.getElementById("buttons_spieler1").style="display:none;";
         document.getElementById("player1").innerText=Spielername1+" hat gewählt!";
 
-        if(Spielmodus == 2){
+        if(Spielmodus !== 2){
            Auswahl_Spieler2 = Math.floor(Math.random() * 10);
         }
     } 
