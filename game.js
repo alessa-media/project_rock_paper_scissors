@@ -9,7 +9,7 @@ let Auswahl_Spieler1 = null;
 let Auswahl_Spieler2 = null;
 let winner
 let Spielername1 
-let Spielername2 
+let Spielername2 = "Computer"
 let Spielmodus
 
 
@@ -27,11 +27,12 @@ function start_game(runden, modus){
     document.getElementById("game").style="display:block;";
 
 
-    //Pop-up-Fenster, um beiden Spielern einen Namen zu geben.
+    //Pop-up-Fenster, um beiden Spieler 1 einen Namen zu geben.
     Spielername1 = prompt("Gib Spieler 1 einen Namen.");
 
+    // Falls Mehrspieler gespielt wird, wird man Aufgefordert Spieler 2 einen Namen zu geben.
     if(modus == 2){
-        Spielmodus = modus;
+        Spielmodus = "Multiplayer";
         Spielername2 = prompt("Gib Spieler 2 einen Namen.");
     }    
 
@@ -49,8 +50,15 @@ function selected1(Auswahl){
         document.getElementById("buttons_spieler1").style="display:none;";
         document.getElementById("player1").innerText=Spielername1+" hat gewählt!";
 
-        if(Spielmodus !== 2){
-           Auswahl_Spieler2 = Math.floor(Math.random() * 10);
+        if(Spielmodus !== "Multiplayer"){
+           Auswahl_Spieler2 = Math.floor(Math.random() * 9);
+           if(Auswahl_Spieler2 % 3 == 0){
+            Auswahl_Spieler2 = 'Schere';
+           }else if(Auswahl_Spieler2 % 3 == 1){
+            Auswahl_Spieler2 = 'Stein';
+           }else{
+            Auswahl_Spieler2 = 'Papier';
+           }
         }
     } 
 
@@ -100,11 +108,9 @@ function check_winner(eingabe1,eingabe2){
         return winner;
     }else if((eingabe1 == "Stein" && eingabe2 == "Schere" )||(eingabe1 == "Schere" && eingabe2 == "Papier" )||(eingabe1 == "Papier" && eingabe2 == "Stein")){
         winner = Spielername1;
-       // alert("Der Sieger ist " + winner);
         return winner;    
     }else{
         winner = Spielername2;
-      //  alert("Der Sieger ist " +winner);
         return winner;
     }
 }
@@ -134,17 +140,33 @@ function display_result(){
 
 function new_round(){
     if(Anzahl_Runden >= 1){
-        document.getElementById("game").style="display:block;";
-        document.getElementById("spielauswertung").style="display:none";  
 
-        document.getElementById("player1").innerText=Spielername1+" wählt...";
-        document.getElementById("player2").innerText=Spielername2+" wählt...";
 
-        document.getElementById("buttons_spieler1").style="display:block;";
-        document.getElementById("buttons_spieler2").style="display:block;";
+        
+        if(Spielmodus == "Multiplayer"){
+            document.getElementById("game").style="display:block;";
+            document.getElementById("spielauswertung").style="display:none";  
+    
+            document.getElementById("player1").innerText=Spielername1+" wählt...";
+            document.getElementById("player2").innerText=Spielername2+" wählt...";
+    
+            document.getElementById("buttons_spieler1").style="display:block;";
+            document.getElementById("buttons_spieler2").style="display:block;";
 
-        selected1(null);
-        selected2(null);     
+            selected1(null);
+            selected2(null);  
+        }else{
+            Auswahl_Spieler1 = null;
+            Auswahl_Spieler2 = null;
+
+            document.getElementById("game").style="display:block;";
+            document.getElementById("spielauswertung").style="display:none";  
+    
+            document.getElementById("player1").innerText=Spielername1+" wählt...";
+    
+            document.getElementById("buttons_spieler1").style="display:block;";
+        }
+        
     }
 
 
