@@ -10,15 +10,17 @@ let Auswahl_Spieler2 = null;
 let winner
 let Spielername1 
 let Spielername2 
+let Spielmodus
 
 
 
 
 //Spiel wird gestartet
 //Beide Spielblöcke werden angezeigt, sobald auf "Spiel starten" geklickt wird.
-function start_game(runden){
+function start_game(runden, modus){
     //Rundenanzahl festlegen
     Anzahl_Runden=runden
+
 
     //Anzeigen und ausblenden der korrekten Elemente
     document.getElementById("rundenauswahl").style="display:none;";
@@ -26,8 +28,12 @@ function start_game(runden){
 
 
     //Pop-up-Fenster, um beiden Spielern einen Namen zu geben.
-    Spielername1 = prompt("Gib Spieler 1 einen Namen.")
-    Spielername2 = prompt("Gib Spieler 2 einen Namen.")
+    Spielername1 = prompt("Gib Spieler 1 einen Namen.");
+
+    if(modus == 2){
+        Spielmodus = modus;
+        Spielername2 = prompt("Gib Spieler 2 einen Namen.");
+    }    
 
     //damit der eingegebene Spielername auf der Seite angezeigt wird.
     document.getElementById("player1").innerText=Spielername1+" wählt...";
@@ -42,6 +48,10 @@ function selected1(Auswahl){
     if(Auswahl_Spieler1 !== null ){
         document.getElementById("buttons_spieler1").style="display:none;";
         document.getElementById("player1").innerText=Spielername1+" hat gewählt!";
+
+        if(Spielmodus == 2){
+           Auswahl_Spieler2 = Math.floor(Math.random() * 10);
+        }
     } 
 
     //sobald beide spieler gewählt haben wird die Runde ausgewertet

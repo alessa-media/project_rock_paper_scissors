@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiplayer: Schere, Stein, Papier</title>
+    <title>Multiplayer</title>
 </head>
 <body class="main">
     <div class="background">
         <button type="button" onclick="javascript:history.back()">Zurück</button><br>
-            <h1 class="title">Game in Progress</h1><br>
+            <h1 class="title">Mehrspieler</h1><br>
         <button class="button__text" id="start_button" onclick="document.getElementById('rundenauswahl').style='display:block;' ; 
         document.getElementById('start_button').style='display:none;'">Spiel starten</button>
 
         <div id="rundenauswahl" style="display: none;">
             <h2 class="rounds">Wie viele Runden möchtet ihr spielen?</h2>
             <div class="rounds__buttons">
-                <button class="rounds__buttons--text" onclick="start_game(3)">3</button>
-                <button class="rounds__buttons--text" onclick="start_game(5)">5</button>
-                <button class="rounds__buttons--text" onclick="start_game(10)">10</button>
+                <button class="rounds__buttons--text" onclick="start_game(3, 2)">3</button>
+                <button class="rounds__buttons--text" onclick="start_game(5, 2)">5</button>
+                <button class="rounds__buttons--text" onclick="start_game(10, 2)">10</button>
             </div>
         </div>
 
