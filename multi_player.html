@@ -11,22 +11,26 @@
     <button class="backbutton" type="button" onclick="javascript:history.back()">Zurück</button><br>
     <div class="background">
             <h1 class="title__multiplayer">Mehrspieler</h1><br>
-        <button class="button__text" id="start_button" onclick="document.getElementById('rundenauswahl').style='display:block;' ; 
+        <button class="button__text" id="start_button" onclick="document.getElementById('rundenauswahl').style='display:inline-block;' ; 
         document.getElementById('start_button').style='display:none;'">Spiel starten</button>
         <div id="rundenauswahl" style="display: none;">
-            <h2 class="rounds">Wie viele Runden möchtet ihr spielen?</h2>
-            <div class="rounds__buttons">
-                <button class="rounds__buttons--text" onclick="start_game(3, 2)">3</button>
-                <button class="rounds__buttons--text" onclick="start_game(5, 2)">5</button>
-                <button class="rounds__buttons--text" onclick="start_game(10, 2)">10</button>
+            <div class="rounds">
+                <h2 class="rounds__text">Wie viele Runden möchtet ihr spielen?</h2>
+                <div class="rounds__buttons">
+                    <button class="rounds__buttons--text" onclick="start_game(3, 2)">3</button>
+                    <button class="rounds__buttons--text" onclick="start_game(5, 2)">5</button>
+                    <button class="rounds__buttons--text" onclick="start_game(10, 2)">10</button>
+                </div>
             </div>
         </div>
+
+<!--habe style="display: inline-block;" auf linie 14, 33 und 44 eingefügt. auf 14 und 33 war es vorher nur display: block;-->
 
         <!--div "game" wird angezeigt während des Spiels-->
         <div id="game" style="display:none;">
             <div class="selection">
                 <p id="player1">Spieler 1 wählt...</p>
-                <div class="rounds__buttons" id="buttons_spieler1" style="display: block;">
+                <div class="rounds__buttons" id="buttons_spieler1" style="display: inline-block;">
                     <button class="rounds__buttons--text" onclick="selected1('Schere')" id="scissors1">Schere</button>
                     <button class="rounds__buttons--text" onclick="selected1('Stein') " id="stone1">Stein</button>
                     <button class="rounds__buttons--text" onclick="selected1('Papier') "id="paper1">Papier</button>
@@ -37,7 +41,7 @@
             </div>
             <div>
                 <p id="player2">Spieler 2 wählt...</p>
-                <div class="rounds__buttons" id="buttons_spieler2">
+                <div class="rounds__buttons" id="buttons_spieler2" style="display: inline-block;">
                     <button class="rounds__buttons--text" onclick="selected2('Schere') "id="scissors2">Schere</button>
                     <button class="rounds__buttons--text" onclick="selected2('Stein') " id="stone2">Stein</button>
                     <button class="rounds__buttons--text" onclick="selected2('Papier') "id="paper2">Papier</button>

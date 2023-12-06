@@ -175,13 +175,14 @@
 .rounds{
     background-color: rgb(179,222,226);
     color: rgb(48,77,109);
-    border-radius: 10px;
+    padding: 40px;
 }
 
 .rounds__buttons{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
+    padding-bottom: 30px;
 }
 
 .rounds__buttons--text{
@@ -191,6 +192,7 @@
     border: 1px solid rgb(48,77,109);
     border-radius: 10px;
     background-color: rgb(179,222,226);
+    padding: 10px;
 }
 
 .rounds__buttons--text:hover{
