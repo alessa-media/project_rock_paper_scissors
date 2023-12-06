@@ -1,3 +1,4 @@
+/*Schrift:*/
 /* roboto-100 - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -35,8 +36,7 @@
     font-family: "Roboto";
   }
 
-/* frontpage-css: */
-
+/* Allgemeines css fuer Frontpage und Teile des Multiplayers und Singleplayers: */
 .main{
     max-width: 2500px;
     margin: auto;
@@ -44,6 +44,7 @@
     height: 100vh;
 }
 
+/* workaround fuer Hintergrundbild */
 .main::before{
     content: "";
     background-image: url("background_pic.jpg");
@@ -67,6 +68,7 @@
     border-radius: 10px;
 }
 
+/* css fuer Frontpage, die naechsten vier Codebloecke sind fuer die Buttons und deren Inhalt, sowie den Hover-Effekt*/
 /* check how and if flex-basis is needed */
 .buttons{
     display: flex;
@@ -103,6 +105,8 @@
     background-color: rgb(179,222,226);
 }
 
+/* Die naechsten sieben Codebloecke sind fuer den Beschreibungsbutton,
+   seinen Inhalt, die Spielerklaerung sowie den Hover-Effekt auf den Buttons */
 .description{
     text-align: center;
     background-color: rgb(150,150,150);
@@ -149,8 +153,7 @@
     background-color: rgb(48,77,109);
 }
 
-/* multiplayer-css: */
-
+/* css fuer die Multiplayer-Seite: */
 .rounds{
     background-color: rgb(179,222,226);
     color: rgb(48,77,109);
