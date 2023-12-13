@@ -188,17 +188,19 @@
 .rounds__buttons--text{
     font-size: large;
     font-weight: bold;
-    color: rgb(48,77,109);
+    width: 80px;
+    height: 50px;
+    color: white;
     border: 1px solid rgb(48,77,109);
     border-radius: 10px;
-    background-color: rgb(179,222,226);
+    background-color: rgb(48,77,109);
     padding: 10px;
 }
 
 .rounds__buttons--text:hover{
-    color: white;
+    color: rgb(48,77,109);
     border: 1px solid rgb(48,77,109);
-    background-color: rgb(48,77,109);
+    background-color: rgb(179,222,226);
 }
 
 .background{
@@ -222,4 +224,19 @@
     font-size: 50px;
     padding: 30px;
     color: white;
+}
+
+.button__nextround{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border-color: rgb(48,77,109);
+    border-radius: 10px;
+    background-color: rgb(48,77,109);
+}
+
+.button__nextround:hover{
+    color: rgb(48, 77, 109);
+    border: 1px solid rgb(48,77,109);
+    background-color: rgb(179,222,226);
 }

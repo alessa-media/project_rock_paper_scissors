@@ -10,7 +10,7 @@
 <body class="main">
     <button class="backbutton" type="button" onclick="javascript:history.back()">Zurück</button><br>
     <div class="background">
-            <h1 class="title__singleplayer">Einzelspieler</h1><br>
+            <h1 class="title__singleplayer">Single Player</h1><br>
         <button class="button__text" id="start_button" onclick="document.getElementById('rundenauswahl').style='display:inline-block;' ; 
         document.getElementById('start_button').style='display:none;'">Spiel starten</button>
         <div id="rundenauswahl" style="display: none;">
@@ -47,7 +47,7 @@
             <h2 id="sieger"></h2>
             <h3 id="punktzahl"></h3>
 
-            <button id="nächste_runde" onclick="new_round()">Nächste Runde</button>
+            <button class="button__nextround"id="nächste_runde" onclick="new_round()">Nächste Runde</button>
         </div>
 
         <script src="game.js">
