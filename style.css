@@ -211,7 +211,6 @@
 
 .selection{
     color: rgb(48,77,109);
-    padding: 40px;
 }
 
 .selection__playertext{
@@ -223,8 +222,6 @@
 .selection__buttons{
     display: flex;
     flex-direction: row;
-    padding-bottom: 30px;
-    justify-content: space-between;
 }
 
 .selection__buttons--decision{
