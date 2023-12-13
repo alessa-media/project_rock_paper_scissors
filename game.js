@@ -8,7 +8,7 @@ let Spieler2_Punkte = 0;
 let Auswahl_Spieler1 = null;
 let Auswahl_Spieler2 = null;
 let winner
-let Spielername1
+let Spielername1 
 let Spielername2 = "Computer";
 let Spielmodus
 
@@ -17,7 +17,7 @@ let Spielmodus
 //Beide Spielblöcke werden angezeigt, sobald auf "Spiel starten" geklickt wird.
 function start_game(runden, modus){
     //Rundenanzahl festlegen
-    Anzahl_Runden=runden
+    Anzahl_Runden=runden;
 
 
     //Anzeigen und ausblenden der korrekten Elemente
@@ -25,15 +25,21 @@ function start_game(runden, modus){
     document.getElementById("game").style="display:block;";
 
 
-    //Pop-up-Fenster, um beiden Spieler 1 einen Namen zu geben.
-    Spielername1 = prompt("Gib Spieler 1 einen Namen.", "Spieler1");
-    check_name(Spielername1);
+    if(Spielername1 == null){
+
+        //Pop-up-Fenster, um beiden Spieler 1 einen Namen zu geben.
+        Spielername1 = prompt("Gib Spieler 1 einen Namen.", "Hand");
+        Spielername1 = check_name(Spielername1);
 
     // Falls Mehrspieler gespielt wird, wird man Aufgefordert Spieler 2 einen Namen zu geben.
-    if(modus == 2){
-        Spielmodus = "Multiplayer";
-        Spielername2 = prompt("Gib Spieler 2 einen Namen.", "Spieler2");
-    }    
+        if(modus == 2){
+            Spielmodus = "Multiplayer";
+            Spielername2 = prompt("Gib Spieler 2 einen Namen.", "Fuss");
+            Spielername2 = check_name(Spielername2);
+        }    
+    }
+
+
 
     //damit der eingegebene Spielername auf der Seite angezeigt wird.
     document.getElementById("player1").innerText=Spielername1+" wählt...";
@@ -171,15 +177,16 @@ function new_round(){
 
 
     if(Anzahl_Runden == 1){
-        document.getElementById("nächste_runde").innerText="zur Auswertung";
+        document.getElementById("naechste_runde").innerText="zur Auswertung";
     }
 
 
 
     //Falls Alle Runden gespielt wurden wird das Spiel beendet und das Endresultat angezeigt
     if(Anzahl_Runden == 0){
+        final_winner(Spieler1_Punkte,Spieler2_Punkte);
 
-        document.getElementById("naechste_runde").style="display:none"
+        document.getElementById("naechste_runde").style="display:none;";
         document.getElementById("spielauswertung").style="display:block";
         document.getElementById("sieger").innerText= winner + " gewinnt das Spiel! \n Endstand: " + Spielername1 + ": "  + Spieler1_Punkte + ", " + Spielername2 + ": " + Spieler2_Punkte;
         document.getElementById("punktzahl").style="display:none;";
@@ -189,6 +196,8 @@ function new_round(){
         if(Spieler1_Punkte == Spieler2_Punkte){
             document.getElementById("sieger").innerText= "Das Endresultat ist Unentschieden!";
         }
+
+        document.getElementById("new_game").style="display:block;";
     }
 
 
@@ -220,10 +229,54 @@ function countdown(){
         }, 1000);
 }
 
-
+// Sicherstellen das die Spieler Namen eingeben
 function check_name(spieler){
-    while(spieler == '' || null){
-        spieler = prompt("Bitte gib einen Namen ein!");
+    while(spieler == '' || spieler == null){
+        spieler = prompt("Bitte gib einen Namen ein!", "Roland Schwager");
+
+        
+
     }
 
+    if(Spielmodus == "Multiplayer"){
+        if(Spielername1 == spieler){
+            spieler = "Not Roland Schwager";
+            //spieler = "Herwig Hansmann"
+        }
+        
+        if(Spielername1 == "Not Roland Schwager"){
+            spieler = "Roland Schwager"
+        }
+    }
+
+    return spieler;
+}
+
+
+
+function final_winner(punkte1, punkte2){
+    if(punkte1 > punkte2){
+        winner = Spielername1
+    }else{
+        winner = Spielername2
+    }
+}
+
+
+function new_game(){
+    Spieler1_Punkte = 0;
+    Spieler2_Punkte = 0;
+    Auswahl_Spieler1 = null;
+    Auswahl_Spieler2 = null;
+
+    document.getElementById("rundenauswahl").style="display:block;";
+    document.getElementById("spielauswertung").style="display:none;";
+    document.getElementById("buttons_spieler1").style="display:block;";
+    document.getElementById("naechste_runde").style="display:block;";
+    document.getElementById("naechste_runde").innerText="nächste Runde";
+    document.getElementById("new_game").style="display:none;";
+
+    document.getElementById("Spieler1_wahl").style="display:block;";
+    document.getElementById("Spieler2_wahl").style="display:block;";
+    document.getElementById("punktzahl").style="display:block;";
 }
