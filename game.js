@@ -253,7 +253,7 @@ function check_name(spieler){
 }
 
 
-
+//wertet die Endpunktestände aus
 function final_winner(punkte1, punkte2){
     if(punkte1 > punkte2){
         winner = Spielername1
@@ -263,7 +263,9 @@ function final_winner(punkte1, punkte2){
 }
 
 
-function new_game(){
+
+// Setzt das Spiel zurück
+function reset_game(){
     Spieler1_Punkte = 0;
     Spieler2_Punkte = 0;
     Auswahl_Spieler1 = null;
@@ -280,3 +282,4 @@ function new_game(){
     document.getElementById("Spieler2_wahl").style="display:block;";
     document.getElementById("punktzahl").style="display:block;";
 }
+
