@@ -50,18 +50,6 @@
     font-size: 100px;
 }
 
-/* 
-.evaluation{
-    display: flex;
-    flex-basis: 30%;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.evaluation__text{
-
-}
-
 /* workaround fuer Hintergrundbild */
 .main::before{
     content: "";
@@ -216,6 +204,42 @@
 }
 
 .rounds__buttons--text:hover{
+    color: white;
+    border: 1px solid rgb(48,77,109);
+    background-color: rgb(111,167,190);
+}
+
+.selection{
+    color: rgb(48,77,109);
+    padding: 40px;
+}
+
+.selection__playertext{
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.selection__buttons{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+    justify-content: space-between;
+}
+
+.selection__buttons--decision{
+    font-size: 30px;
+    font-weight: bold;
+    width: 80px;
+    height: 50px;
+    color: white;
+    border: 1px solid rgb(48,77,109);
+    border-radius: 10px;
+    background-color: rgb(48,77,109);
+    padding: 10px;
+}
+
+.selection__buttons--decision:hover{
     color: rgb(48,77,109);
     border: 1px solid rgb(48,77,109);
     background-color: rgb(179,222,226);

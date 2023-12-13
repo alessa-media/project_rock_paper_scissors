@@ -27,23 +27,23 @@
         <!--div "game" wird angezeigt während des Spiels-->
         <div id="game" style="display:none;">
             <div class="selection">
-                <p id="player1">Spieler 1 wählt...</p>
-                <div class="rounds__buttons" id="buttons_spieler1" style="display: inline-block;">
-                    <button class="rounds__buttons--text" onclick="selected1('Schere')" id="scissors1">Schere</button>
-                    <button class="rounds__buttons--text" onclick="selected1('Stein') " id="stone1">Stein</button>
-                    <button class="rounds__buttons--text" onclick="selected1('Papier') "id="paper1">Papier</button>
+                <p class="selection__playertext" id="player1">Spieler 1 wählt...</p>
+                <div class="selection__buttons" id="buttons_spieler1" style="display: inline-block;">
+                    <button class="selection__buttons--decision" onclick="selected1('Schere')" id="scissors1">Schere</button>
+                    <button class="selection__buttons--decision" onclick="selected1('Stein') " id="stone1">Stein</button>
+                    <button class="selection__buttons--decision" onclick="selected1('Papier') "id="paper1">Papier</button>
                 </div>
                 <div>
                     <button class="Nach_Auswahl" style="display: none;">Locked in</button>
                 </div>
-            </div>
             <div>
-                <p id="player2">Spieler 2 wählt...</p>
-                <div class="rounds__buttons" id="buttons_spieler2" style="display: inline-block;">
-                    <button class="rounds__buttons--text" onclick="selected2('Schere') "id="scissors2">Schere</button>
-                    <button class="rounds__buttons--text" onclick="selected2('Stein') " id="stone2">Stein</button>
-                    <button class="rounds__buttons--text" onclick="selected2('Papier') "id="paper2">Papier</button>
+                <p class="selection__playertext" id="player2">Spieler 2 wählt...</p>
+                <div class="selection__buttons" id="buttons_spieler2" style="display: inline-block;">
+                    <button class="selection__buttons--decision" onclick="selected2('Schere') "id="scissors2">Schere</button>
+                    <button class="selection__buttons--decision" onclick="selected2('Stein') " id="stone2">Stein</button>
+                    <button class="selection__buttons--decision" onclick="selected2('Papier') "id="paper2">Papier</button>
                 </div>
+            </div>
             </div>
         </div>
 
@@ -52,9 +52,9 @@
         <!--div "spielauswertung" wird angezeigt, wenn die Runde oder das Spiel beendet wurde-->
         <div id="spielauswertung" style="display: none;">
         
-            <p id="Spieler1_wahl"></p><br>
-            <p id="Spieler2_wahl"></p><br>
-            <h2 id="sieger"></h2><br>
+            <p id="Spieler1_wahl"></p>
+            <p id="Spieler2_wahl"></p>
+            <h2 id="sieger"></h2>
             <h3 id="punktzahl"></h3>
 
             <button class="button__nextround" id="naechste_runde" onclick="new_round()">Nächste Runde</button>
