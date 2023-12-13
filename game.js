@@ -8,23 +8,9 @@ let Spieler2_Punkte = 0;
 let Auswahl_Spieler1 = null;
 let Auswahl_Spieler2 = null;
 let winner
-let Spielername1 
-let Spielername2 = "Computer"
+let Spielername1
+let Spielername2 = "Computer";
 let Spielmodus
-
-/*
-let timeleft = 3;
-let auswertung = setInterval(function(){
-    if(timeleft <= 0){
-      clearInterval(auswertung);
-      document.getElementById("countdown").innerHTML = "Finished";
-    } else {
-      document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
-    }
-    timeleft -= 1;
-  }, 1000);
-  */
-
 
 
 //Spiel wird gestartet
@@ -40,12 +26,13 @@ function start_game(runden, modus){
 
 
     //Pop-up-Fenster, um beiden Spieler 1 einen Namen zu geben.
-    Spielername1 = prompt("Gib Spieler 1 einen Namen.");
+    Spielername1 = prompt("Gib Spieler 1 einen Namen.", "Spieler1");
+    check_name(Spielername1);
 
     // Falls Mehrspieler gespielt wird, wird man Aufgefordert Spieler 2 einen Namen zu geben.
     if(modus == 2){
         Spielmodus = "Multiplayer";
-        Spielername2 = prompt("Gib Spieler 2 einen Namen.");
+        Spielername2 = prompt("Gib Spieler 2 einen Namen.", "Spieler2");
     }    
 
     //damit der eingegebene Spielername auf der Seite angezeigt wird.
@@ -143,12 +130,10 @@ function display_result(){
     }
 
     //Zwischenstand anzeigen
-    //document.getElementById("game").style="display:none";
-    //document.getElementById("spielauswertung").style="display:block";
     document.getElementById("Spieler1_wahl").innerText= Spielername1 + " hat " + Auswahl_Spieler1 + " gewählt!"
     document.getElementById("Spieler2_wahl").innerText= Spielername2 + " hat " + Auswahl_Spieler2 + " gewählt!"
     document.getElementById("sieger").innerText="Die Runde geht an: " + winner;
-    document.getElementById("punktzahl").innerText="Zwischendstand: " + Spielername1 + ": " + Spieler1_Punkte + " ,  " + Spielername2 + ": " + Spieler2_Punkte;
+    document.getElementById("punktzahl").innerText="Zwischenstand: " + Spielername1 + ": " + Spieler1_Punkte + " ,  " + Spielername2 + ": " + Spieler2_Punkte;
 
     //Für den Fall Unentschieden
     if(winner == null){
@@ -194,9 +179,9 @@ function new_round(){
     //Falls Alle Runden gespielt wurden wird das Spiel beendet und das Endresultat angezeigt
     if(Anzahl_Runden == 0){
 
-        document.getElementById("nächste_runde").style="display:none"
+        document.getElementById("naechste_runde").style="display:none"
         document.getElementById("spielauswertung").style="display:block";
-        document.getElementById("sieger").innerText= winner + " gewinnt das Spiel! Endstand: Spieler 1: " + Spieler1_Punkte + " Spieler 2: " + Spieler2_Punkte;
+        document.getElementById("sieger").innerText= winner + " gewinnt das Spiel! \n Endstand: " + Spielername1 + ": "  + Spieler1_Punkte + ", " + Spielername2 + ": " + Spieler2_Punkte;
         document.getElementById("punktzahl").style="display:none;";
         
         document.getElementById("Spieler1_wahl").style="display:none;";
@@ -233,4 +218,12 @@ function countdown(){
         }
         timeleft -= 1;
         }, 1000);
+}
+
+
+function check_name(spieler){
+    while(spieler == '' || null){
+        spieler = prompt("Bitte gib einen Namen ein!");
+    }
+
 }
