@@ -83,6 +83,7 @@
     border: 1px solid rgb(48,77,109);
     border-radius: 10px;
     background-color: rgb(48,77,109);
+    transition: .3s ease-in-out;
 }
 
 .backbutton:hover{
@@ -119,6 +120,7 @@
     border-color: rgb(48,77,109);
     border-radius: 10px;
     background-color: rgb(48,77,109);
+    transition: .3s ease-in-out;
 }
 
 .button__text:hover{
@@ -144,6 +146,7 @@
     border: 1px solid rgb(48,77,109);
     border-radius: 10px;
     background-color: rgb(179,222,226);
+    transition: .3s ease-in-out;
 }
 
 .description__button:hover{
@@ -169,6 +172,7 @@
     border: 1px solid rgb(48,77,109);
     border-radius: 10px;
     background-color: rgb(179,222,226);
+    transition: .3s ease-in-out;
 }
 
 .description__button--hide:hover{
@@ -201,6 +205,7 @@
     border-radius: 10px;
     background-color: rgb(48,77,109);
     padding: 10px;
+    transition: .3s ease-in-out;
 }
 
 .rounds__buttons--text:hover{
@@ -222,21 +227,23 @@
 .selection__buttons{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    gap: 40px;
 }
 
-.selection__buttons--decision{
+.selection__buttons--decision button{
     font-size: 30px;
     font-weight: bold;
-    width: 80px;
     height: 50px;
     color: white;
     border: 1px solid rgb(48,77,109);
     border-radius: 10px;
     background-color: rgb(48,77,109);
     padding: 10px;
+    transition: .3s ease-in-out;
 }
 
-.selection__buttons--decision:hover{
+.selection__buttons--decision:hover button{
     color: rgb(48,77,109);
     border: 1px solid rgb(48,77,109);
     background-color: rgb(179,222,226);
