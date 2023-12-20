@@ -37,7 +37,7 @@ function display_result(){
     document.getElementById("Spieler1_wahl").innerText= Spielername1 + " hat " + Auswahl_Spieler1 + " gewählt!"
     document.getElementById("Spieler2_wahl").innerText= Spielername2 + " hat " + Auswahl_Spieler2 + " gewählt!"
     document.getElementById("sieger").innerText="Die Runde geht an: " + winner;
-    document.getElementById("punktzahl").innerText="Zwischenstand: " + Spielername1 + ": " + Spieler1_Punkte + " ,  " + Spielername2 + ": " + Spieler2_Punkte;
+    document.getElementById("punktzahl").innerText="Zwischenstand: " + Spielername1 + ": " + Spieler1_Punkte + ",  " + Spielername2 + ": " + Spieler2_Punkte;
 
     //Für den Fall Unentschieden
     if(winner == null){
