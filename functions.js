@@ -195,7 +195,6 @@ function reset_game(){
     document.getElementById("rundenauswahl").style="display:inline-block";
     document.getElementById("spielauswertung").style="display:none;";
     document.getElementById("buttons_spieler1").style="display:";
-   // document.getElementById("buttons_spieler2").style="display:";
     document.getElementById("naechste_runde").style="display:block;";
     document.getElementById("naechste_runde").innerText="nächste Runde";
     document.getElementById("new_game").style="display:none;";
