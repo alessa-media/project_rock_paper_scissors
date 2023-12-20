@@ -184,6 +184,7 @@
 /* css fuer die Multiplayer-Seite: */
 .rounds{
     background-color: rgb(179,222,226);
+    border-radius: 5px;
     color: rgb(48,77,109);
     padding: 40px;
 }
@@ -191,8 +192,8 @@
 .rounds__buttons{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    padding-bottom: 30px;
+    justify-content: center;
+    gap: 40px;
 }
 
 .rounds__buttons--text{
@@ -215,7 +216,11 @@
 }
 
 .selection{
+    background-color: rgb(179,222,226);
+    border-radius: 5px;
     color: rgb(48,77,109);
+    padding: 30px;
+    margin: 10px;
 }
 
 .selection__playertext{
@@ -244,9 +249,10 @@
 }
 
 .selection__buttons--decision:hover button{
-    color: rgb(48,77,109);
+    color: white;
     border: 1px solid rgb(48,77,109);
     background-color: rgb(179,222,226);
+    background-color: rgb(111,167,190);
 }
 
 .background{
@@ -279,9 +285,26 @@
     border-color: rgb(48,77,109);
     border-radius: 10px;
     background-color: rgb(48,77,109);
+    transition: .3s ease-in-out;
 }
 
 .button__nextround:hover{
+    color: rgb(48, 77, 109);
+    border: 1px solid rgb(48,77,109);
+    background-color: rgb(179,222,226);
+}
+
+.button__nextgame{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border-color: rgb(48,77,109);
+    border-radius: 10px;
+    background-color: rgb(48,77,109);
+    transition: .3s ease-in-out;
+}
+
+.button__nextgame:hover{
     color: rgb(48, 77, 109);
     border: 1px solid rgb(48,77,109);
     background-color: rgb(179,222,226);
