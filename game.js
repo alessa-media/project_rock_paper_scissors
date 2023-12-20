@@ -50,6 +50,7 @@ function start_game(runden, modus){
     if(Spielmodus == "Multiplayer"){
     document.getElementById("player2").innerText=Spielername2+" wählt...";
     }
+
 }
 
 

@@ -71,6 +71,7 @@ function new_round(){
             document.getElementById("buttons_spieler2").style="display:";
         }
 
+
     }
 
     //ändern des Buttontextes in der letzten Runde
@@ -178,11 +179,15 @@ function reset_game(){
     Auswahl_Spieler1 = null;
     Auswahl_Spieler2 = null;
 
+    
     //Damit im Muliplayer gegen jemand anders gespielt werden kann werden die Namen zurückgesetzt
     if(Spielmodus == "Multiplayer" ){
         Spielmodus = 2;
         Spielername1 = null;
         Spielername2 = null;
+
+        document.getElementById("buttons_spieler2").style="display:";
+
     }
 
 
@@ -190,7 +195,7 @@ function reset_game(){
     document.getElementById("rundenauswahl").style="display:inline-block";
     document.getElementById("spielauswertung").style="display:none;";
     document.getElementById("buttons_spieler1").style="display:";
-    document.getElementById("buttons_spieler2").style="display:";
+   // document.getElementById("buttons_spieler2").style="display:";
     document.getElementById("naechste_runde").style="display:block;";
     document.getElementById("naechste_runde").innerText="nächste Runde";
     document.getElementById("new_game").style="display:none;";
@@ -198,4 +203,9 @@ function reset_game(){
     document.getElementById("Spieler1_wahl").style="display:block;";
     document.getElementById("Spieler2_wahl").style="display:block;";
     document.getElementById("punktzahl").style="display:block;";
+
+
+
+    document.getElementById("naechste_runde").style="display:";
+    document.getElementById("new_game").style="display:none;";
 }
