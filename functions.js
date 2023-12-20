@@ -60,12 +60,12 @@ function new_round(){
         //Text anpassen für während der Auswahl für Spieler1
         document.getElementById("player1").innerText=Spielername1+" wählt...";
         //Buttons wieder einblenden für Spieler1
-        document.getElementById("buttons_spieler1").style="display:block;";
+        document.getElementById("buttons_spieler1").style="display:";
         
         if(Spielmodus == "Multiplayer"){
             //Text anpassen und Buttons einblenden für spieler 2 im Multiplayer
             document.getElementById("player2").innerText=Spielername2+" wählt...";
-            document.getElementById("buttons_spieler2").style="display:block;";
+            document.getElementById("buttons_spieler2").style="display:";
         }
 
     }
@@ -166,15 +166,17 @@ function reset_game(){
     Auswahl_Spieler1 = null;
     Auswahl_Spieler2 = null;
 
+
     if(Spielmodus == "Multiplayer" ){
+        Spielmodus = 2;
         Spielername1 = null;
         Spielername2 = null;
     }
 
-    document.getElementById("rundenauswahl").style="display:block;";
+    document.getElementById("rundenauswahl").style="display:inline-block";
     document.getElementById("spielauswertung").style="display:none;";
-    document.getElementById("buttons_spieler1").style="display:block;";
-    document.getElementById("buttons_spieler2").style="display:block;";
+    document.getElementById("buttons_spieler1").style="display:";
+    document.getElementById("buttons_spieler2").style="display:";
     document.getElementById("naechste_runde").style="display:block;";
     document.getElementById("naechste_runde").innerText="nächste Runde";
     document.getElementById("new_game").style="display:none;";
