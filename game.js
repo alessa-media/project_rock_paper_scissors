@@ -23,7 +23,7 @@ function start_game(runden, modus){
 
     //Anzeigen und ausblenden der korrekten Elemente
     document.getElementById("rundenauswahl").style="display:none;";
-    document.getElementById("game").style="display:block;";
+    document.getElementById("game").style="display:inline-block;";
 
 
     //Aufforderung für EIngabe eines Spielernamens, sofern keiner vergeben ist

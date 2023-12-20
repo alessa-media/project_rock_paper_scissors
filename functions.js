@@ -57,7 +57,7 @@ function new_round(){
         Auswahl_Spieler2 = null;
 
         //Spielblock einblenden
-        document.getElementById("game").style="display:block;";
+        document.getElementById("game").style="display:inline-block;";
         //Spielauswertung ausblenden
         document.getElementById("spielauswertung").style="display:none";  
         //Text anpassen für während der Auswahl für Spieler1
