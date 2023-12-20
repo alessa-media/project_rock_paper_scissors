@@ -21,9 +21,12 @@ function check_winner(eingabe1,eingabe2){
     }
 }
 
+
+
+//Funktion die das Resultat anzeigt
 function display_result(){
 
-    //Punkte vergeben
+    //Punkte vergeben, erhöhen des Punktstandes
     if(winner == Spielername1){
         Spieler1_Punkte += 1;
     }else if (winner == Spielername2){
@@ -46,7 +49,7 @@ function display_result(){
 }
 
 
-
+//Funktion um die Runde zurückzusetzen
 function new_round(){
     if(Anzahl_Runden >= 1){
         //Auswahl zurücksetzen
@@ -70,7 +73,7 @@ function new_round(){
 
     }
 
-
+    //ändern des Buttontextes in der letzten Runde
     if(Anzahl_Runden == 1){
         document.getElementById("naechste_runde").innerText="zur Auswertung";
     }
@@ -81,8 +84,11 @@ function new_round(){
     if(Anzahl_Runden == 0){
         final_winner(Spieler1_Punkte,Spieler2_Punkte);
 
+        //Anzeigen und Ausblenden der passenden Elemente
         document.getElementById("naechste_runde").style="display:none;";
         document.getElementById("spielauswertung").style="display:block";
+
+        //Text Endresultat Einfügen und anzeigen
         document.getElementById("sieger").innerText= winner + " gewinnt das Spiel! \n Endstand: " + Spielername1 + ": "  + Spieler1_Punkte + ", " + Spielername2 + ": " + Spieler2_Punkte;
         document.getElementById("punktzahl").style="display:none;";
         
@@ -110,29 +116,34 @@ function countdown(){
         //Variable setzen um Countdownlänge zu bestimmen
         let timeleft = 2;
         
-        //Intervall, so das immer nach 1000 milisekunden die Funktion function wiederholt wird
+        //Intervall, so das immer nach 1000 millisekunden die Funktion function wiederholt wird
         let auswertung = setInterval(function(){
             if(timeleft <= 0){
             clearInterval(auswertung);
+
+            //ausblenden countdown, einblenden auswertung
             document.getElementById("live_countdown").style="display:none;";
             document.getElementById("spielauswertung").style="display:block";
+            //default zeit 3 Sekunden wieder herstellen
             document.getElementById("live_countdown").innerText = 3;
-        } else {
-        document.getElementById("live_countdown").innerText = timeleft;
-        }
-        timeleft -= 1;
+            } else {
+            //nach 1 Sekunde wird der Text im countdown geändert
+            document.getElementById("live_countdown").innerText = timeleft;
+            }
+            timeleft -= 1;
+        // Intervall von 1000 milisekunden wird festgelegt
         }, 1000);
 }
 
+
 // Sicherstellen das die Spieler Namen eingeben
+// Es wird solange ein Spielername abgefragt bis ein Name eingegeben wird
 function check_name(spieler){
     while(spieler == '' || spieler == null){
         spieler = prompt("Bitte gib einen Namen ein!", "Roland Schwager");
-
-        
-
     }
-//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+//
     if(Spielmodus == "Multiplayer"){
         if(Spielername1 == spieler){
             spieler = "Not Roland Schwager";
@@ -144,11 +155,12 @@ function check_name(spieler){
         }
     }
 
+    //Spielername wird zurückgegeben
     return spieler;
 }
 
 
-//wertet die Endpunktestände aus
+//wertet die Endpunktestände aus, gibt den Spielernamen des Siegers an die Variable winner weiter
 function final_winner(punkte1, punkte2){
     if(punkte1 > punkte2){
         winner = Spielername1
@@ -159,20 +171,22 @@ function final_winner(punkte1, punkte2){
 
 
 
-// Setzt das Spiel zurück
+// Setzt das Spiel zurück, im SIngleplayer bleibt der Spielername derselbe
 function reset_game(){
     Spieler1_Punkte = 0;
     Spieler2_Punkte = 0;
     Auswahl_Spieler1 = null;
     Auswahl_Spieler2 = null;
 
-
+    //Damit im Muliplayer gegen jemand anders gespielt werden kann werden die Namen zurückgesetzt
     if(Spielmodus == "Multiplayer" ){
         Spielmodus = 2;
         Spielername1 = null;
         Spielername2 = null;
     }
 
+
+    //Einblenden und Ausblenden der notwendigen Elemente
     document.getElementById("rundenauswahl").style="display:inline-block";
     document.getElementById("spielauswertung").style="display:none;";
     document.getElementById("buttons_spieler1").style="display:";
