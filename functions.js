@@ -132,7 +132,7 @@ function check_name(spieler){
         
 
     }
-
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     if(Spielmodus == "Multiplayer"){
         if(Spielername1 == spieler){
             spieler = "Not Roland Schwager";
@@ -166,9 +166,15 @@ function reset_game(){
     Auswahl_Spieler1 = null;
     Auswahl_Spieler2 = null;
 
+    if(Spielmodus == "Multiplayer" ){
+        Spielername1 = null;
+        Spielername2 = null;
+    }
+
     document.getElementById("rundenauswahl").style="display:block;";
     document.getElementById("spielauswertung").style="display:none;";
     document.getElementById("buttons_spieler1").style="display:block;";
+    document.getElementById("buttons_spieler2").style="display:block;";
     document.getElementById("naechste_runde").style="display:block;";
     document.getElementById("naechste_runde").innerText="nächste Runde";
     document.getElementById("new_game").style="display:none;";
