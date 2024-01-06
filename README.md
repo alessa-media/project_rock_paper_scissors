@@ -6,4 +6,4 @@
 ## Features
 * play against the computer
 * play against a friend
-* The player may chose between 3, 5 and 10 rounds
+* The player(s) may chose between 3, 5 and 10 rounds
